@@ -1,3 +1,7 @@
+const frontendUrls = process.env.FRONTEND_URL
+    ? process.env.FRONTEND_URL.split(',').map(url => url.trim())
+    : [];
+
 const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:5173',
@@ -5,7 +9,7 @@ const allowedOrigins = [
     'https://vertex-digital-alpha.vercel.app',
     'https://www.yasasrepairshop.com',
     'https://yasasrepairshop.com',
-    process.env.FRONTEND_URL
+    ...frontendUrls
 ].filter(Boolean);
 
 
