@@ -18,7 +18,9 @@ const connectDB = async () => {
             console.error('MongoDB DNS/network error. Check internet, DNS, VPN/firewall, or Atlas IP Access List.');
         }
         console.error('Error connecting to MongoDB:', error);
-        process.exit(1);
+        if (process.env.VERCEL !== '1') {
+            process.exit(1);
+        }
     }
 }
 
