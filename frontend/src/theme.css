@@ -1,0 +1,305 @@
+/* Premium Dashboard and Form Theme */
+
+/* Tables */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    margin-top: 24px;
+}
+
+.table__thead .table__th {
+    text-align: left;
+    padding: 12px 24px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #9ca3af;
+    border-bottom: 2px solid rgba(31, 41, 55, 0.05);
+}
+
+.table tbody tr {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.table tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(234, 88, 12, 0.12);
+    background: #fff;
+}
+
+.table td {
+    padding: 20px 24px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.table td:first-child {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.table td:last-child {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.table__cell--inactive td {
+    opacity: 0.6;
+}
+
+/* Table Buttons */
+.table td button {
+    background: rgba(249, 115, 22, 0.1);
+    color: #ea580c;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    margin-right: 8px;
+}
+
+.table td button:hover {
+    background: #ea580c;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Forms */
+.form {
+    max-width: 600px;
+    margin: 32px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 32px;
+    box-shadow: 0 24px 60px rgba(31, 41, 55, 0.08);
+    backdrop-filter: blur(20px);
+    animation: slideUp 0.5s ease forwards;
+}
+
+.form__title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.form__title-row h2 {
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #ea580c, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.form__action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.form__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form label, .form_label {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.nowrap {
+    white-space: nowrap;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #9ca3af;
+}
+
+.form input[type="text"],
+.form input[type="password"],
+.form select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid rgba(249, 115, 22, 0.15);
+    border-radius: 16px;
+    background: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(31, 41, 55, 0.02);
+}
+
+.form input:focus,
+.form select:focus {
+    outline: none;
+    border-color: #ea580c;
+    box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15);
+}
+
+.form__input--incomplete,
+.form__input--invalid,
+.form__select--invalid {
+    border-color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.02) !important;
+}
+
+.form input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    accent-color: #ea580c;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+/* Select Multiple */
+.form select[multiple] {
+    padding: 12px;
+    height: auto;
+}
+
+.form select option {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+}
+
+.form select option:checked {
+    background: linear-gradient(135deg, #ea580c, #fb923c) !important;
+    color: #fff !important;
+}
+
+/* Footer & Buttons */
+.form__footer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form button[type="submit"],
+.icon-button {
+    background: linear-gradient(135deg, #ea580c, #fb923c);
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 999px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 14px 30px rgba(234, 88, 12, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-button {
+    padding: 14px 18px;
+    border-radius: 16px;
+}
+
+.icon-button[title="Delete"] {
+    background: #ef4444;
+    box-shadow: 0 14px 30px rgba(239, 68, 68, 0.25);
+}
+
+.form button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(234, 88, 12, 0.3);
+}
+
+.form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.errmsg {
+    padding: 16px 20px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #b91c1c;
+    border-radius: 12px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    border-left: 4px solid #ef4444;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Added Animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.hover-scale {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(234, 88, 12, 0.15);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-badge--completed {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-badge--open {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+
