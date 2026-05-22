@@ -32,9 +32,9 @@ const authRouter = require('./routes/authRoutes');
 const noteRouter = require('./routes/noteRoutes');
 
 app.use('/', rootRouter);
-app.use('/auth', authRouter);
-app.use('/users', userRouter);
-app.use('/notes', noteRouter);
+app.use(['/auth', '/api/auth'], authRouter);
+app.use(['/users', '/api/users'], userRouter);
+app.use(['/notes', '/api/notes'], noteRouter);
 
 app.all(/.*/, (req, res) => {
     res.status(404)
