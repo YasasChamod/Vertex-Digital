@@ -51,10 +51,14 @@ app.use(errorHandler);
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    if (process.env.VERCEL !== '1') {
+        app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    }
 });
 
 mongoose.connection.on('error', err => {
     console.log(err);
     logEvents(`${err.no}: ${err.code}\t${err.syscall}\t${err.hostname}`, 'mongoErrLog.log');
 });
+
+module.exports = app;
