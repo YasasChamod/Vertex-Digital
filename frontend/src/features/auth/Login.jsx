@@ -73,7 +73,7 @@ const Login = () => {
                             autoComplete="off"
                             required
                         />
-                        <button type="submit" disabled={isLoading} style={{ marginTop: '8px' }}>
+                        <button className="form__btn form__btn--primary form__btn--full" type="submit" disabled={isLoading} style={{ marginTop: '8px' }}>
                             {isLoading ? 'Logging in...' : 'Login'}
                         </button>
                     </div>

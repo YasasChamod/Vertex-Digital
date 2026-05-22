@@ -513,6 +513,23 @@
   color: #4b5563;
 }
 
+.site-footer {
+  width: min(1120px, calc(100% - 32px));
+  margin: 48px auto 0;
+  padding: 24px 0;
+  border-top: 1px solid rgba(31, 41, 55, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-footer__copyright {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
 @media (max-width: 900px) {
   .public-page {
     padding: 18px;

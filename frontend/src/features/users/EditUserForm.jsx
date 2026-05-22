@@ -99,24 +99,6 @@ const EditUserForm = ({ user }) => {
             <form className="form" onSubmit={onSaveUserClicked}>
                 <div className="form__title-row">
                     <h2>Edit User</h2>
-                    <div className="form__action-buttons">
-                        <button
-                            className="icon-button"
-                            title="Save"
-                            onClick={onSaveUserClicked}
-                            disabled={!canSave}
-                        >
-                            <FontAwesomeIcon icon={faSave} />
-                        </button>
-                        <button
-                            className="icon-button"
-                            title="Delete"
-                            type="button"
-                            onClick={onDeleteUserClicked}
-                        >
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </button>
-                    </div>
                 </div>
 
                 <div className="form__body">
@@ -166,6 +148,30 @@ const EditUserForm = ({ user }) => {
                     >
                         {options}
                     </select>
+                </div>
+
+                <div className="form__footer">
+                    <button
+                        className="form__btn form__btn--secondary"
+                        type="button"
+                        onClick={() => navigate('/dash/users')}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        className="form__btn form__btn--danger"
+                        type="button"
+                        onClick={onDeleteUserClicked}
+                    >
+                        <FontAwesomeIcon icon={faTrashCan} /> Delete
+                    </button>
+                    <button
+                        className="form__btn form__btn--primary"
+                        type="submit"
+                        disabled={!canSave}
+                    >
+                        <FontAwesomeIcon icon={faSave} /> Save Changes
+                    </button>
                 </div>
             </form>
         </>

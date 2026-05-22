@@ -59,25 +59,6 @@ const EditNoteForm = ({ note, users }) => {
       <form className="form" onSubmit={e => e.preventDefault()}>
         <div className="form__title-row">
           <h2>Edit Note #{note.ticket}</h2>
-          <div className="form__action-buttons">
-            <button
-              className="icon-button"
-              title="Save"
-              onClick={onSaveNoteClicked}
-              disabled={!canSave}
-            >
-              <FontAwesomeIcon icon={faSave} />
-            </button>
-            {(isManager || isAdmin) && (
-              <button
-                className="icon-button"
-                title="Delete"
-                onClick={onDeleteNoteClicked}
-              >
-                <FontAwesomeIcon icon={faTrashCan} />
-              </button>
-            )}
-          </div>
         </div>
 
         <div className="form__body">
@@ -120,6 +101,33 @@ const EditNoteForm = ({ note, users }) => {
           >
             {options}
           </select>
+        </div>
+
+        <div className="form__footer">
+          <button
+            className="form__btn form__btn--secondary"
+            type="button"
+            onClick={() => navigate('/dash/notes')}
+          >
+            Cancel
+          </button>
+          {(isManager || isAdmin) && (
+            <button
+              className="form__btn form__btn--danger"
+              type="button"
+              onClick={onDeleteNoteClicked}
+            >
+              <FontAwesomeIcon icon={faTrashCan} /> Delete
+            </button>
+          )}
+          <button
+            className="form__btn form__btn--primary"
+            type="button"
+            onClick={onSaveNoteClicked}
+            disabled={!canSave}
+          >
+            <FontAwesomeIcon icon={faSave} /> Save Changes
+          </button>
         </div>
       </form>
     </>

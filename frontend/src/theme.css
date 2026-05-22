@@ -186,6 +186,8 @@
     margin-top: 32px;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
 }
 
 .form button[type="submit"],
@@ -213,6 +215,71 @@
 .icon-button[title="Delete"] {
     background: #ef4444;
     box-shadow: 0 14px 30px rgba(239, 68, 68, 0.25);
+}
+
+/* Redesigned consistent buttons */
+.form__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+}
+
+.form__btn--primary {
+    background: linear-gradient(135deg, #ea580c, #fb923c);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.15);
+}
+
+.form__btn--primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(234, 88, 12, 0.22);
+}
+
+.form__btn--secondary {
+    background: rgba(255, 255, 255, 0.85);
+    color: #4b5563;
+    border: 1px solid rgba(31, 41, 55, 0.12);
+}
+
+.form__btn--secondary:hover:not(:disabled) {
+    background: #fff;
+    color: #ea580c;
+    border-color: rgba(234, 88, 12, 0.2);
+    transform: translateY(-1px);
+}
+
+.form__btn--danger {
+    background: rgba(239, 68, 68, 0.08);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.form__btn--danger:hover:not(:disabled) {
+    background: #ef4444;
+    color: #fff;
+    border-color: #ef4444;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(239, 68, 68, 0.15);
+}
+
+.form__btn--full {
+    width: 100%;
+}
+
+.form__btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 .form button:hover:not(:disabled) {

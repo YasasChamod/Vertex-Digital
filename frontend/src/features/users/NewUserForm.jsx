@@ -116,10 +116,18 @@ const NewUserForm = () => {
                 </div>
                 <div className="form__footer">
                     <button
+                        className="form__btn form__btn--secondary"
+                        type="button"
+                        onClick={() => navigate('/dash/users')}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        className="form__btn form__btn--primary"
                         type="submit"
                         disabled={!canSave}
                     >
-                        <FontAwesomeIcon icon={faSave} /> Save User
+                        <FontAwesomeIcon icon={faSave} /> Create User
                     </button>
                 </div>
             </form>
