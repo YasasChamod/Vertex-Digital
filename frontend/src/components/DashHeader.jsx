@@ -63,19 +63,19 @@ const DashHeader = () => {
                 <div className="dash-actions" role="group" aria-label="Dashboard actions">
                     <button type="button" className="icon-button" onClick={() => go("/dash/notes/new")} title="New note">
                         <FontAwesomeIcon icon={faFileCirclePlus} />
-                        <span className="visually-hidden">New note</span>
+                        <span className="icon-button-label">New note</span>
                     </button>
 
                     {showNewUser && (
                         <button type="button" className="icon-button" onClick={() => go("/dash/users/new")} title="New user">
                             <FontAwesomeIcon icon={faUserPlus} />
-                            <span className="visually-hidden">New user</span>
+                            <span className="icon-button-label">New user</span>
                         </button>
                     )}
 
                     <button type="button" className="icon-button logout" onClick={handleLogout} title="Logout">
                         <FontAwesomeIcon icon={faRightFromBracket} />
-                        <span className="visually-hidden">Logout</span>
+                        <span className="icon-button-label">Logout</span>
                     </button>
                 </div>
             </nav>

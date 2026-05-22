@@ -24,7 +24,8 @@ const DashFooter = () => {
 	const content = (
 		<footer className="dash-footer">
 			{goHomeButton}
-			<p>Current User: <strong>{username}</strong> | Status: <strong>{status}</strong></p>
+			<p className="dash-footer__status">Current User: <strong>{username}</strong> | Status: <strong>{status}</strong></p>
+			<p className="dash-footer__copyright">&copy; 2026 Vertex Digital. All Rights Reserved.</p>
 		</footer>
 	);
 	return content;
