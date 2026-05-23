@@ -1,5 +1,12 @@
 const mongoose = require('mongoose');
-const AutoIncrement = require('mongoose-sequence')(mongoose);
+
+const counterSchema = new mongoose.Schema({
+    id: { type: String, required: true },
+    reference_value: { type: mongoose.Schema.Types.Mixed, default: null },
+    seq: { type: Number, default: 499 }
+}, { collection: 'counters' });
+
+const Counter = mongoose.models.Counter || mongoose.model('Counter', counterSchema);
 
 const noteSchema = new mongoose.Schema({
     user: {
@@ -18,6 +25,10 @@ const noteSchema = new mongoose.Schema({
     completed: {
         type: Boolean,
         default: false,
+    },
+    ticket: {
+        type: Number,
+        unique: true
     }
 },
 {
@@ -25,9 +36,16 @@ const noteSchema = new mongoose.Schema({
 }
 );
 
-noteSchema.plugin(AutoIncrement, {inc_field: 'ticket',
-    id: 'ticketNums',
-    start_seq: 500
-});    
+noteSchema.pre('save', async function() {
+    const doc = this;
+    if (doc.isNew && !doc.ticket) {
+        const counter = await Counter.findOneAndUpdate(
+            { id: 'ticketNums', reference_value: null },
+            { $inc: { seq: 1 } },
+            { returnDocument: 'after', upsert: true, setDefaultsOnInsert: true }
+        );
+        doc.ticket = counter.seq;
+    }
+});
 
 module.exports = mongoose.model('Note', noteSchema);
